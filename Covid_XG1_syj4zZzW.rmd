@@ -57,7 +57,7 @@ options(scipen=99999999) # Used to revoke display of scientific numbers
 # 2. Load data
 ```{r}
 #Load SampleSubmission.csv provided by zindi
-Covid_sub <- read.csv("C:/Users/A199702/Documents/Zindi/Covid 19/SampleSubmission.csv", stringsAsFactors = F)
+Covid_sub <- read.csv("Zindi/Covid 19/SampleSubmission.csv", stringsAsFactors = F)
 head(Covid_sub)
 ```
 
@@ -81,7 +81,7 @@ Covid_sub
 # 4. Load JHU data
 ```{r}
 #Load data from JHU as at 18 April inclusive
-Covid_cases <- read.csv("C:/Users/A199702/Documents/Zindi/Covid 19/COVID-19_for_submission/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv",stringsAsFactors = F)
+Covid_cases <- read.csv("Zindi/Covid 19/COVID-19_for_submission/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv",stringsAsFactors = F)
 #Map new names 
 Covid_cases$Country.Region <- mapvalues(Covid_cases$Country.Region,
                                         from=c("United Arab Emirates","Philippines","Dominican Republic",
@@ -106,7 +106,7 @@ Covid_cases$Country.Region <- mapvalues(Covid_cases$Country.Region,
                                                "Lao People's Democratic Republic (the)","Taiwan"))
 
 #Load data from JHU as at 18 April inclusive
-Covid_deaths <- read.csv("C:/Users/A199702/Documents/Zindi/Covid 19/COVID-19_for_submission/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv",stringsAsFactors = F)
+Covid_deaths <- read.csv("Zindi/Covid 19/COVID-19_for_submission/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv",stringsAsFactors = F)
 Covid_deaths$Country.Region <- mapvalues(Covid_deaths$Country.Region,
                                         from=c("United Arab Emirates","Philippines","Dominican Republic",
                                                "Brunei","US","Iran","Korea, South","Vietnam","Russia",
@@ -476,7 +476,7 @@ df <- rbind(df_1,df_2)
 df <- df[with(df, order(country,date)),]
 df$deaths <- round(df$deaths,2)
 df[df$country == "Nigeria",]
-write.csv(df, file="C:/Users/A199702/Documents/Zindi/Covid 19/Covid_XG1_syj4zZzW.csv",row.names = F)
+write.csv(df, file="Zindi/Covid 19/Covid_XG1_syj4zZzW.csv",row.names = F)
 
 toc()
 ```
