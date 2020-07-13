@@ -1,7 +1,7 @@
 # Zindi-wins-AI4D-Predict-the-Global-Spread-of-COVID-19-insights
 The codes presented here are available for downloads. They represent my winning solutions on Zindi.
 
-The goal of the challenge was to predict covid 19 deaths for 209 countries ~ 2months into the future for April 18 2020 to June 8 2020.
+The goal of the challenge was to predict covid 19 deaths for 209 countries ~ 2months into the future from April 18 2020 to June 8 2020.
 
 Files have been uploaded here as follows
 pdf- showing presentation of my approach , solution and insights
