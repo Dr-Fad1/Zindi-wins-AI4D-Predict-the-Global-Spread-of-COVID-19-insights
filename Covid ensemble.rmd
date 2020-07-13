@@ -31,8 +31,8 @@ options(repr.plot.width=4, repr.plot.height=4)
 # 2. Load submissions
 ```{r}
 #Load model outputs
-Covid_XG1_syj4zZzW <- read.csv("C:/Users/A199702/Documents/Zindi/Covid 19/Covid_XG1_syj4zZzW.csv")
-Covid_XG3_hGHyz71E <- read.csv("C:/Users/A199702/Documents/Zindi/Covid 19/Covid_XG3_hGHyz71E.csv")
+Covid_XG1_syj4zZzW <- read.csv("Zindi/Covid 19/Covid_XG1_syj4zZzW.csv")
+Covid_XG3_hGHyz71E <- read.csv("Zindi/Covid 19/Covid_XG3_hGHyz71E.csv")
 ```
 
 # 3. Ensemble
@@ -42,7 +42,7 @@ Covid_ensemble <- rbind(Covid_XG3_hGHyz71E[,1:2],Covid_XG1_syj4zZzW[,1:2])#PCsvS
 Covid_ensemble <- Covid_ensemble %>% group_by(Territory_Date) %>% summarise_all(funs(mean))
 
 #Write ouput
-write.csv(Covid_ensemble, file="C:/Users/A199702/Documents/Zindi/Covid 19/Covid_ensemble.csv",row.names = F)
+write.csv(Covid_ensemble, file="Zindi/Covid 19/Covid_ensemble.csv",row.names = F)
 head(Covid_ensemble)
 beep(6)
 ```
