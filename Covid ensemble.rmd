@@ -1,0 +1,54 @@
+---
+title: "Covid 19 ensemble"
+author: "Dr Fad"
+date: "Mar 24, 2020"
+output:
+  html_document:
+    toc: yes 
+    toc_depth: 4
+  word_document:
+    toc: yes 
+    toc_depth: 4
+  pdf_document: 
+    toc: yes
+    toc_depth: 4
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# 1. Load libraries
+
+```{r cars}
+
+## Import packages
+library(dplyr)
+library(beepr)
+
+options(repr.plot.width=4, repr.plot.height=4)
+```
+
+# 2. Load submissions
+```{r}
+#Load model outputs
+Covid_XG1_syj4zZzW <- read.csv("C:/Users/A199702/Documents/Zindi/Covid 19/Covid_XG1_syj4zZzW.csv")
+Covid_XG3_hGHyz71E <- read.csv("C:/Users/A199702/Documents/Zindi/Covid 19/Covid_XG3_hGHyz71E.csv")
+```
+
+# 3. Ensemble
+Simple average
+```{r}
+Covid_ensemble <- rbind(Covid_XG3_hGHyz71E[,1:2],Covid_XG1_syj4zZzW[,1:2])#PCsvSSFj
+Covid_ensemble <- Covid_ensemble %>% group_by(Territory_Date) %>% summarise_all(funs(mean))
+
+#Write ouput
+write.csv(Covid_ensemble, file="C:/Users/A199702/Documents/Zindi/Covid 19/Covid_ensemble.csv",row.names = F)
+head(Covid_ensemble)
+beep(6)
+```
+
+
+```{r}
+
+```
+
